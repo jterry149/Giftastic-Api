@@ -1,6 +1,7 @@
 /*========= Main Body Properties ==========*/
 body {
     background-image:url("../images/background.jpg");
+    background-repeat:no-repeat;
     width:auto;
     height: 100%;
     color: white;
@@ -11,5 +12,29 @@ body {
 #page-header{
     background-image:url("../images/background.jpg");
     text-align: center;
+}
+.jumbotron {
+    padding-top:30px;
+    padding-bottom: 30px;
+}
+/*======== Image Properties =============*/
+img{
+    width:150px;
+    height: 150px;
+}
+
+.btn {
+    /* adding spacing between each button*/
+    margin: 5px;
+    display: inline;
+}
+.btn-block {
+    width:150px;
+}
+.topicsDiv{
+    /* making the images go in one line rather than block & adding spacing between the images*/
+    float: left;
+    margin: 5px;
+    border:2px solid gray;
 }
 /*======== Media Queries ================*/

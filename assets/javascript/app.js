@@ -10,14 +10,88 @@ var displayTopicBtns = function ()
     // A for loop to create the buttons for the topics and assign class and id
     for (var i = 0; i < topics.length; i++)
     {
-        var topicBtn = $("<button>");           // create topicBtn to html element <button>
-        topicBtn.addClass("topics");               // add a class topics
-        topicBtn.addClass("btn btn-primary");   // add a bootstrap class btn btn-primary
-        topicBtn.attr("data-name", topics[i]);  // add am attribute data-name the name of the topics
-        topicBtn.text(topics[i]);               // put the text of the buttons the name in topics array
-        $("#topicBtnDisplay").append(topicBtn); // append those button to the topicBtnDisplay to show the user
+        var topicBtn = $("<button>");                      // create topicBtn to html element <button>
+        topicBtn.addClass("topics");                       // add a class topics
+        topicBtn.addClass("btn btn-primary btn-block");    // add a bootstrap class btn btn-primary
+        topicBtn.attr("data-name", topics[i]);             // add am attribute data-name the name of the topics
+        topicBtn.text(topics[i]);                          // put the text of the buttons the name in topics array
+        $("#topicBtnDisplay").append(topicBtn);            // append those button to the topicBtnDisplay to show the user
     }
 }
 
-// Call the Functions to display page    
+// A function to display the topic gifs when button specific button is pressed
+displayTopicGifs = function ()
+{
+    // Variables
+    var topic = $(this).attr("data-name");      // get the data-name from the topic from topics array
+
+    // The url and api key 
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic +"&api_key=svYaesnli61hUnmOrtZNbTlftlsBzErW&limit=10"; 
+    
+    //console.log(queryURL);                      // displays the constructed url
+    
+    // The ajax call 
+    $.ajax({
+        url: queryURL,
+        method: 'GET'
+    })
+    
+    // Once called get response of topic and display on page
+    .done(function(response) 
+    {
+        console.log(response);                  // console test to make sure something returns from the response
+        $("#topicsView").empty();               // erasing previous gifs are deleted in topicsView div
+        var results = response.data;            // A variable that is assigned to the response.data
+            // Condition if there no gifs to show for the topics
+            if (results == "")
+            {
+                alert("There isn't a gif to be shown for this selected button");
+            }
+            
+            // A for loop to loop through results and display in topicsView gif
+            for (var i = 0; i < results.length; i++)
+            {
+                var topicsDiv = $("<div>");      // The div for the topics gif to go inside
+                topicsDiv.addClass("topicsDiv"); // Add a class to the topicsDiv
+
+                var topicRating = $("<p>").text("Rating: " + results[i].rating); // Pull the rating of the topic gif
+                topicsDiv.append(topicRating);   // Append the rating to the topicDiv in a paragraph
+                
+                var topicImage = $("<img>");      // A variable to pull the image gif    
+                topicImage.attr("src", results[i].images.fixed_height_small_still.url);     // image stored into src attr still
+                topicImage.attr("data-still",results[i].images.fixed_height_small_still.url); // still image
+                topicImage.attr("data-animate",results[i].images.fixed_height_small.url);     // animated image
+                topicImage.attr("data-state", "still");   // set the image state
+                topicImage.addClass("image");             // add a class image
+                topicsDiv.append(topicImage);             // append image to topicsDiv of still image 
+    
+                $("#topicsView").prepend(topicsDiv);      // add topicsDiv images to topicsView on html page
+            }
+    });
+}
+
+
+
+// Call the Functions to display on page    
 displayTopicBtns();
+
+// Document Event handlers
+$(document).on("click", ".topics", displayTopicGifs); // on click of topic call fucntion displayTopicsGif
+
+// On click function
+$(document).on("click", ".image", function()
+{
+    var state = $(this).attr('data-state');
+    // Condition of images in still state to animate when clicked
+    if ( state == 'still')
+    {
+        $(this).attr('src', $(this).data('animate'));
+        $(this).attr('data-state', 'animate');
+    }
+    // other wise make image still when clicked
+    else
+    {
+        $(this).attr('src', $(this).data('still'));
+        $(this).attr('data-state', 'still');
+    }
+});

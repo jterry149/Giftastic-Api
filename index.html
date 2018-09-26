@@ -21,23 +21,25 @@
     </div>
 <!--======================== Main  Body Container ========================-->
     <div class="container">
-        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">   
+        <div class="row">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">   
 <!--======================= Topic Buttons Area ===========================-->
-            <div id="topicBtnDisplay" class="container"></div>
+                <div id="topicBtnDisplay" class="container"></div>
 <!--======================= Display Animated Gifs Area ===================-->
-            <div id="topView"></div></div>
+                <div id="topicsView"></div></div>
 <!--======================= Add Topic Form Area ========================-->
  
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <form id="topic-form" role="form">
-                <h2><legend>Topic Search</legend></h2>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <form id="topic-form" role="form">
+                    <h2><legend>Topic Search</legend></h2>
                     <div class="form-group">
                         <label for="action-input">Add your topic below</label>
                         <input type="text" id="action-input">
-                </div>
-                <input id="addTopic" type="submit" value="Add your action" class="btn btn-primary">
-                <input id="removeTopic" type="submit" value="Remove last action" class="btn btn-primary">
-            </form>    
+                    </div>
+                    <input id="addTopic" type="submit" value="Add Topic" class="btn btn-primary btn-block">
+                    <input id="removeTopic" type="submit" value="Remove Topic" class="btn btn-primary btn-block">
+                </form>    
+            </div>
         </div>
     </div>
 <!--======================= End Main Body Content ========================-->
