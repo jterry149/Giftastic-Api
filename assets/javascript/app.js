@@ -18,9 +18,40 @@ var displayTopicBtns = function ()
         $("#topicBtnDisplay").append(topicBtn);            // append those button to the topicBtnDisplay to show the user
     }
 }
+// A function to remove a topic from the topicBtn Display
+var removeNewTopicBtn = function ()
+{
+    // Once the button is clicked it removes the last button added from the topicBtnDisplay Div
+    $("#removeTopic").on("click", function()
+    {
+        var remove = $();
+
+    });
+}
+// A function to add a topic gif button inside the topicBtnDisplay Div
+var addNewTopicBtn = function()
+{
+    // Once the button is clicked the topic is added to list of button in topicBtnDisplay Div
+    $("#addTopic").on("click", function()
+    {
+        // Variable to store new topic
+        var topic = $("#topic-input").val().trim();
+        // Condition if topic input is blank user can't add the button
+        if (topic == "")
+        {
+            alert("You must input a new topic to add button");
+            return false;   
+        }
+            topics.push(topic);     // Push the new topic to topics array
+        
+            displayTopicBtns();     // Call the displayTopicBtns function
+        
+        return false;
+    });
+}
 
 // A function to display the topic gifs when button specific button is pressed
-displayTopicGifs = function ()
+var displayTopicGifs = function ()
 {
     // Variables
     var topic = $(this).attr("data-name");      // get the data-name from the topic from topics array
@@ -74,6 +105,7 @@ displayTopicGifs = function ()
 
 // Call the Functions to display on page    
 displayTopicBtns();
+addNewTopicBtn();
 
 // Document Event handlers
 $(document).on("click", ".topics", displayTopicGifs); // on click of topic call fucntion displayTopicsGif

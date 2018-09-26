@@ -41,7 +41,7 @@ img{
     border: 2px solid gray;
 }
 .btn:hover {
-    background: gray;
+    background: gray; 
 }
 .btn-block {
     width:150px;
