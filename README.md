@@ -20,7 +20,7 @@ This project purpose was to be able to incorporate the GIPHY API to make a dynam
 
 #### Display Gifs
 
-Click on button to display that topics 10 most relevent gifs. To animate the gif click on a particular gif the gif will begin to animate to stop animation click on the gif again.
+Click on button to display that topics 10 most relevent gifs. To animate the gif click on a particular gif. The gif will begin to animate when clicked to stop the animation click on the gif again.
 
 ![Display Gifs](assets/screenshots/displayGifs.png)
 
