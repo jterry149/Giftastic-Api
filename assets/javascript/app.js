@@ -24,8 +24,9 @@ var removeNewTopicBtn = function ()
     // Once the button is clicked it removes the last button added from the topicBtnDisplay Div
     $("#removeTopic").on("click", function()
     {
-        var remove = $();
-
+        topics.pop(topics);     // Use pop() to remove last element in the array of topics and so on
+        displayTopicBtns();     // Call function displayTopicBtns to display current buttons
+        return false;           // Return if nothing to remove from the buttons
     });
 }
 // A function to add a topic gif button inside the topicBtnDisplay Div
@@ -39,14 +40,24 @@ var addNewTopicBtn = function()
         // Condition if topic input is blank user can't add the button
         if (topic == "")
         {
-            alert("You must input a new topic to add button");
+            alert("You must input a new topic to add button"); // Alert message to tell user to type a topic
             return false;   
         }
-            topics.push(topic);     // Push the new topic to topics array
-        
-            displayTopicBtns();     // Call the displayTopicBtns function
-        
+            topics.push(topic);              // Push the new topic to topics array  
+            displayTopicBtns();              // Call the displayTopicBtns function
+            $('input[type="text"]').val(''); // Clear the text input field
+             
         return false;
+    }); 
+}
+
+// A function to reset the screen to original 10 topics
+var resetTopicBtn = function()
+{
+    // Once the button is clicked the original 10 topics are displayed on the screen in the topicBtnDisplay Div
+    $("resetTopic").on("click", function()
+    {
+        displayTopicBtns();     // Call the buttons to be display the original 10 topics
     });
 }
 
@@ -101,13 +112,14 @@ var displayTopicGifs = function ()
     });
 }
 
-
+//============= Giftastic-Api Load Page Area ====================//
 
 // Call the Functions to display on page    
-displayTopicBtns();
-addNewTopicBtn();
+displayTopicBtns();     // calls the displayTopicBtn function to display buttons for topics
+addNewTopicBtn();       // calls the addNewTopicBtn function to add a topic to the buttons
+removeNewTopicBtn();    // calls the remove NewTopicBtn to remove the last topic added so when clicked
 
-// Document Event handlers
+//==== Document Event handlers to handle the animations for a pause state, animate state ====//
 $(document).on("click", ".topics", displayTopicGifs); // on click of topic call fucntion displayTopicsGif
 
 // On click function
