@@ -95,7 +95,7 @@ var displayTopicGifs = function ()
             {
                 var topicsDiv = $("<div>");      // The div for the topics gif to go inside
                 topicsDiv.addClass("topicsDiv"); // Add a class to the topicsDiv
-
+                
                 var topicRating = $("<p>").text("Rating: " + results[i].rating); // Pull the rating of the topic gif
                 topicsDiv.append(topicRating);   // Append the rating to the topicDiv in a paragraph
                 
