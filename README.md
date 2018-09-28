@@ -35,7 +35,7 @@ Button appears after the add topic button is clicked
 #### Remove Topic Buttons
 
 To remove the last button click on remove button and last topic added will be removed. You can remove all the buttons to add your own topics.
-![Remove Topic](assets/screensots/removeTopic.png)
+![Remove Topic](assets/screenshots/removeTopic.png)
 
 #### Reset the Topics
 
