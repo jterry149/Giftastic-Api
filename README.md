@@ -16,7 +16,7 @@ This project purpose was to be able to incorporate the GIPHY API to make a dynam
 
 #### Home Page
 
-![Home Page](assets/screenshots/home.png)
+![Home](assets/screenshots/home.png)
 
 #### Display Gifs
 
