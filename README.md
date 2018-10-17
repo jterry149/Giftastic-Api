@@ -43,5 +43,5 @@ To reset the buttons to the original topics click the reset button and the origi
 
 #### Demo
 
-![Giftastic-Api Demo](https://jterry149.github.io/Giftastic-Api/)
+[Giftastic-Api Demo](https://jterry149.github.io/Giftastic-Api/)
 
