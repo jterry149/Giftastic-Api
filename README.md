@@ -41,4 +41,7 @@ To remove the last button click on remove button and last topic added will be re
 
 To reset the buttons to the original topics click the reset button and the original buttons will appear.
 
+#### Demo
+
+![Giftastic-Api Demo](https://jterry149.github.io/Giftastic-Api/)
 
