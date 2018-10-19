@@ -14,10 +14,6 @@ This project purpose was to be able to incorporate the GIPHY API to make a dynam
 
 ### How to use the dynamic web page
 
-#### Home Page
-
-![Home](assets/screenshots/home.png)
-
 #### Display Gifs
 
 Click on button to display that topics 10 most relevent gifs. To animate the gif click on a particular gif. The gif will begin to animate when clicked to stop the animation click on the gif again.
