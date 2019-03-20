@@ -2,7 +2,7 @@
 
 ### Purpose
 
-This project purpose was to be able to incorporate the GIPHY API to make a dynamic web page that populates with gifs of my chosen topics. 
+This projects purpose was to learn to incorporate the use of API's with in an application. With this application I utilized the Giphy APY to make a dynamic web page that populates image gifs of chosen topics. 
 
 ### Technologies Used
 
@@ -11,6 +11,7 @@ This project purpose was to be able to incorporate the GIPHY API to make a dynam
     * CSS
     * Javascript
     * Jquery
+    * Giphy API
 
 ### How to use the dynamic web page
 
